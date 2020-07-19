@@ -30,7 +30,7 @@ public class StudentController {
 	@GetMapping("/students")
 	public ResponseEntity<List<Student>> getAllStudents(@RequestParam(required = false) String name) {
 		try {
-			List<Student> students = new ArrayList<Student>();
+			List<Student> students = new ArrayList<>();
 
 			if (name == null)
 				studentRepository.findAll().forEach(students::add);
